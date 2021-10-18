@@ -114,7 +114,7 @@ def extract_frame(vid_item):
         os.system(cmd_rgb)
         os.system(cmd_flow)
 
-    if out_format != 'h5':
+    if out_format == 'h5':
 
         # print(f'------------{out_full_path}------------{vid_path}------{vid_id}')
         cmd_compress = f"python wrap_hdf5.py -sp {os.path.join(out_full_path, vid_path.split('.')[0])} -tp {out_full_path} --single_video; rm -r {os.path.join(out_full_path, vid_path.split('.')[0])}"
